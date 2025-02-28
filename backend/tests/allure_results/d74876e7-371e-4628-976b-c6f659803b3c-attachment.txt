@@ -1,0 +1,12 @@
+INFO     sqlalchemy.engine.Engine:base.py:1896 SELECT DATABASE()
+INFO     sqlalchemy.engine.Engine:base.py:1901 [raw sql] {}
+INFO     sqlalchemy.engine.Engine:base.py:1896 SELECT @@sql_mode
+INFO     sqlalchemy.engine.Engine:base.py:1901 [raw sql] {}
+INFO     sqlalchemy.engine.Engine:base.py:1896 SELECT @@lower_case_table_names
+INFO     sqlalchemy.engine.Engine:base.py:1901 [raw sql] {}
+INFO     sqlalchemy.engine.Engine:base.py:1097 BEGIN (implicit)
+INFO     sqlalchemy.engine.Engine:base.py:1896 SELECT user.id AS user_id, user.username AS user_username, user.password AS user_password, user.create_time AS user_create_time 
+FROM user 
+WHERE user.username = %(username_1)s 
+ LIMIT %(param_1)s
+INFO     sqlalchemy.engine.Engine:base.py:1901 [generated in 0.00018s] {'username_1': 'admin', 'param_1': 1}

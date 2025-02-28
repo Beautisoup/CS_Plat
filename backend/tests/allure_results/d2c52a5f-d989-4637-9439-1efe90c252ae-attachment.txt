@@ -1,0 +1,5 @@
+INFO     sqlalchemy.engine.Engine:base.py:1896 SELECT user.id AS user_id, user.username AS user_username, user.password AS user_password, user.create_time AS user_create_time 
+FROM user 
+WHERE user.id = %(id_1)s 
+ LIMIT %(param_1)s
+INFO     sqlalchemy.engine.Engine:base.py:1901 [generated in 0.00016s] {'id_1': 1, 'param_1': 1}
