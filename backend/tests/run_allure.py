@@ -1,14 +1,22 @@
 import os
 import subprocess
 import webbrowser
-
+import shutil
 
 def run_test():
     result = 'allure_results'
     if not os.path.exists(result):
         os.mkdir(result)
+        # 清除旧的测试结果
+    if os.path.exists(result):
+        shutil.rmtree(result)
+    os.mkdir(result)
     args_list = ['-s', '-v', 'test_user_service.py', '--alluredir', result]
-    subprocess.run(['pytest'] + args_list)
+    try:
+        # 运行 pytest 测试
+        subprocess.run(['pytest'] + args_list, check=True)
+    except subprocess.CalledProcessError as e:
+        print(f"运行测试时出现错误: {e}")
 
 # 使用 allure serve 打开报告
 def open_allure_report():

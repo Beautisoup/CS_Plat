@@ -78,3 +78,7 @@ def test_create_access_token():
     with allure.step("断言生成的访问令牌是否为字符串类型"):
         # 可以进一步验证 token 的格式是否正确，这里简单判断是否为字符串
         assert isinstance(token, str)
+
+
+ # pytest -sv test_user_service.py --alluredir=allure_results
+ # allure generate allure_results -o allure_port --clean
